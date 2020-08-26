@@ -55,7 +55,8 @@
 
 % OST Colorbox
 \usepackage{tcolorbox}
-\newtcolorbox{OSTBox}[1]{colback=white,colframe=OSTPink,title=#1}
+\newtcolorbox{PurpleBox}[1]{colback=white,colframe=OSTBlackberry,title=#1}
+\newtcolorbox{PinkBox}[1]{colback=white,colframe=OSTRaspberry,title=#1}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Setup Document
@@ -112,16 +113,16 @@
     \vskip0pt%
     \begin{tikzpicture}[overlay, remember picture,shift=(current page.south west)]
         \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
-        \fill[fill=OSTPurple] (1.0525cm, 0) rectangle (1.0535cm, 0.528925);
+        \fill[fill=OSTBlackberry] (1.033cm, 0) rectangle (1.073cm, 0.528925);
     \end{tikzpicture}
 }
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Color scheme and font setup
-\setbeamercolor*{frametitle}{fg=OSTPurple,bg=white}
+\setbeamercolor*{frametitle}{fg=OSTBlackberry,bg=white}
 \setbeamerfont{frametitle}{series=\bfseries}
 
-\setbeamertemplate{section in toc}{\hspace{1em}{\scriptsize\color{OSTPurple}$\bullet$}~\inserttocsection}
+\setbeamertemplate{section in toc}{\hspace{1em}{\scriptsize\color{OSTBlackberry}$\bullet$}~\inserttocsection}
 \setbeamercolor*{section in toc}{fg=black}
 \setbeamercolor*{section in toc shaded}{fg=black}
 
@@ -129,7 +130,7 @@
 \setbeamercolor*{section in head/foot}{fg=black}
 
 \setbeamertemplate{itemize item}[circle]
-\setbeamercolor*{itemize item}{fg=OSTPurple}
+\setbeamercolor*{itemize item}{fg=OSTBlackberry}
 \setbeamertemplate{itemize subitem}[circle]
 \setbeamercolor*{itemize subitem}{fg=black}
 \setbeamertemplate{itemize subsubitem}{-}
@@ -142,7 +143,7 @@
 \setbeamertemplate{enumerate subsubitem}{\alph{enumiii})}
 \setbeamercolor{enumerate subsubitem}{fg=black}
 
-\setbeamercolor{caption name}{fg=OSTPurple}
+\setbeamercolor{caption name}{fg=OSTBlackberry}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Creates the title page of the OST.
@@ -162,10 +163,10 @@
             % ==> all measurements scaled by 1:2.1175
 
             % tITLE
-            \node[anchor=north west, draw=none, opacity=0.8, fill=white, minimum height=1.048406cm, inner sep=0.1511cm] at ($(current page.north west)+(7.0035419, -4.4958678)$) {\parbox{7.81582cm}{\color{OSTPurple}\Large\bfseries\Title}};
+            \node[anchor=north west, draw=none, opacity=0.8, fill=white, minimum height=1.048406cm, inner sep=0.1511cm] at ($(current page.north west)+(7.0035419, -4.4958678)$) {\parbox{7.81582cm}{\color{OSTBlackberry}\Large\bfseries\Title}};
             
             % Subtitle
-            \node[anchor=north west, draw=none, opacity=0.8, fill=OSTPink, minimum height=0.6422668cm, inner sep=0.1511cm] at ($(current page.north west)+(5.5442739, -5.5442739)$) {\parbox{5.331759cm}{\color{white}\Subtitle}};
+            \node[anchor=north west, draw=none, opacity=0.8, fill=OSTRaspberry, minimum height=0.6422668cm, inner sep=0.1511cm] at ($(current page.north west)+(5.5442739, -5.5442739)$) {\parbox{5.331759cm}{\color{white}\Subtitle}};
 
             % Logo
             \node[anchor=north west, inner sep=0pt] (ostlogo) at ($(current page.north west)+(13.515939, -7.801653)$) {\includegraphics[width=2.044864cm]{header/OSTLogo.png}};
@@ -181,10 +182,10 @@
             % ==> all measurements scaled by 1:1.984375
 
             % Title
-            \node[anchor=north west, draw=none, opacity=0.8, fill=white, minimum height=0.942362cm, inner sep=0.1511cm] at ($(current page.north west)+(3.91055, -4.96882)$) {\parbox{7.942047cm}{\color{OSTPurple}\Large\bfseries\Title}};
+            \node[anchor=north west, draw=none, opacity=0.8, fill=white, minimum height=0.942362cm, inner sep=0.1511cm] at ($(current page.north west)+(3.91055, -4.96882)$) {\parbox{7.942047cm}{\color{OSTBlackberry}\Large\bfseries\Title}};
 
             % Subtitle
-            \node[anchor=north west, draw=none, opacity=0.8, fill=OSTPink, minimum height=0.68535cm, inner sep=0.1511cm] at ($(current page.north west)+(2.31811, -5.91118)$) {\parbox{5.99685cm}{\color{white}\Subtitle}};
+            \node[anchor=north west, draw=none, opacity=0.8, fill=OSTRaspberry, minimum height=0.68535cm, inner sep=0.1511cm] at ($(current page.north west)+(2.31811, -5.91118)$) {\parbox{5.99685cm}{\color{white}\Subtitle}};
 
             % Logo
             \node[anchor=east, inner sep=0pt] (ostlogo) at ($0.5*(bgimg.south east)+0.5*(current page.south east)-(0.3376, 0)$) {\includegraphics[width=2.182047cm]{header/OSTLogo.png}};

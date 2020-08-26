@@ -86,12 +86,18 @@
 	
 	\section{Second section}
 	\begin{frame}{Boxes}
-		\begin{OSTBox}{}
+		\begin{PurpleBox}{}
 			Nice framed boxes also exist
-		\end{OSTBox}
-		\begin{OSTBox}{With \dots}
+		\end{PurpleBox}
+		\begin{PurpleBox}{With \dots}
 			or without title.
-		\end{OSTBox}
+		\end{PurpleBox}
+		\begin{PinkBox}{}
+            Also in pink
+        \end{PinkBox}
+        \begin{PinkBox}{With \dots}
+            or without title.
+        \end{PinkBox}
 	\end{frame}
 	\begin{frame}{Columns and graphics}
 		\begin{columns}[onlytextwidth]
@@ -109,6 +115,50 @@
 			\end{column}
 		\end{columns}
 	\end{frame}
+    \begin{frame}{Colors}
+		\begin{columns}[onlytextwidth]
+            \begin{column}[t]{0.25\textwidth}
+                Primary colors:
+                \begin{itemize}
+                    \item[] \tikz{\node[fill=OSTBlack,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTBlack};}
+                    \item[] \tikz{\node[fill=OSTBlackberry,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTBlackberry};}
+                    \item[] \tikz{\node[fill=OSTRaspberry,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTRaspberry};}
+                \end{itemize}
+            \end{column}
+            \begin{column}[t]{0.25\textwidth}
+                Design colors:
+                \begin{itemize}
+                    \item[] \tikz{\node[fill=OSTGray,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTGray};}
+                    \item[] \tikz{\node[fill=OSTBlackberry,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTBlackberry};}
+                    \item[] \tikz{\node[fill=OSTDarkPurple,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTDarkPurple};}
+                    \item[] \tikz{\node[fill=OSTLightPurple,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTLightPurple};}
+                    \item[] \tikz{\node[fill=OSTDarkGreen,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTDarkGreen};}
+                    \item[] \tikz{\node[fill=OSTLightGreen,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTLightGreen};}
+                    \item[] \tikz{\node[fill=OSTDarkRed,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTDarkRed};}
+                    \item[] \tikz{\node[fill=OSTLightRed,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTLightRed};}
+                \end{itemize}
+            \end{column}
+            \begin{column}[t]{0.25\textwidth}
+                More design colors:
+                \begin{itemize}
+                    \item[] \tikz{\node[fill=OSTDarkBlue,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTDarkBlue};}
+                    \item[] \tikz{\node[fill=OSTLightBlue,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTLightBlue};}
+                    \item[] \tikz{\node[fill=OSTDarkOrange,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTDarkOrange};}
+                    \item[] \tikz{\node[fill=OSTLightOrange,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTLightOrange};}
+                \end{itemize}
+            \end{column}
+            \begin{column}[t]{0.25\textwidth}
+                Other colors:
+                \begin{itemize}
+                    \item[] \tikz{\node[fill=OSTPurple,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTPurple};}
+                    \item[] \tikz{\node[fill=OSTGreen,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTGreen};}
+                    \item[] \tikz{\node[fill=OSTRed,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTRed};}
+                    \item[] \tikz{\node[fill=OSTBlue,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTBlue};}
+                    \item[] \tikz{\node[fill=OSTOrange,text=white, minimum width=2.5cm] {\footnotesize \ttfamily OSTOrange};}
+                \end{itemize}
+            \end{column}
+        \end{columns}
+    \end{frame}
 
 	\section{Last section}
 	\begin{frame}{The End}
