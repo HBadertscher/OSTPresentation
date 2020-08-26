@@ -1,0 +1,201 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+% LaTeX template for presentations at OST Ostschweizer Fachhochschule
+% (c) 2020 by Hannes Badertscher
+% Template provided unter the MIT license, see LICENSE.txt.
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% Packages
+\usetheme{default}
+\usepackage{ifthen}    % Required for titlepage
+
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}               % use palatino font!
+\linespread{1.05}                       % palatino needs a bit more space!
+\usepackage[T1,small,euler-digits]{eulervm}
+\usepackage[scaled=0.8]{beramono}       % Use bera for mono fonts
+\usefonttheme{professionalfonts}        % Setup beamer to use these fonts
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Babel
+\newcommand*{\LangDE}{de}
+\ifx \Lang \LangDE
+\usepackage[english,ngerman]{babel}
+\else
+\usepackage[ngerman,english]{babel}
+\fi
+
+% Tables
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+% Colors
+\usepackage{xcolor}
+\usepackage{header/OSTColors}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Listings
+\usepackage{listings}
+
+% SI Units
+\usepackage{siunitx}
+\sisetup{detect-all,sticky-per,per-mode=symbol}
+
+% OST Colorbox
+\usepackage{tcolorbox}
+\newtcolorbox{OSTBox}[1]{colback=white,colframe=OSTPink,title=#1}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Setup Document
+\title{\Title}
+\author{\Author}
+
+\hypersetup{
+    pdftitle={\Title},
+    pdfauthor={\Author},
+    pdfsubject={\Subtitle},
+    pdfcreator={LaTeX with hyperref and Beamer}
+}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Outer theme
+\setbeamersize{text margin left=1.053cm,text margin right=0.4439cm} 
+\setbeamertemplate{navigation symbols}{}  % remove navigation symbols
+
+\setbeamertemplate{headline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=0.5\paperwidth,ht=4.65ex,dp=1.5ex,left]{section in head/foot}%
+            \hspace*{0.3cm}\usebeamerfont{section in head/foot}\insertsectionhead%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=0.5\paperwidth,ht=4.65ex,dp=1.5ex,right]{section in head/foot}%
+%            \usebeamercolor[fg]{navigation symbols}%
+%            \insertslidenavigationsymbol%
+%            \insertframenavigationsymbol%
+%            \insertsubsectionnavigationsymbol%
+%            \insertsectionnavigationsymbol%
+%            \insertdocnavigationsymbol%
+%            \insertbackfindforwardnavigationsymbol%
+%            \hspace*{0.3cm}%
+        \end{beamercolorbox}
+    }%
+    \vskip0pt%
+}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=1.053cm,ht=0.85cm,dp=2.5ex,right]{section in head/foot}%
+            \usebeamerfont{text in head/foot}\thepage\hspace*{1em}%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=0.25\paperwidth,ht=0.85cm,dp=2.5ex,left]{section in head/foot}%
+            \hspace*{1em}\usebeamerfont{text in head/foot}\Footer%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=0.33\paperwidth,ht=0.85cm,dp=2.5ex,center]{section in head/foot}%
+            \usebeamerfont{text in head/foot}\Date%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=0.33\paperwidth,ht=0.8cm,dp=2.5ex,right]{section in head/foot}%
+            \vspace*{-0.25cm}\includegraphics[width=1.7567886cm]{header/OSTLogo_footer.png}\hspace*{0.3cm}%
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+    \begin{tikzpicture}[overlay, remember picture,shift=(current page.south west)]
+        \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+        \fill[fill=OSTPurple] (1.0525cm, 0) rectangle (1.0535cm, 0.528925);
+    \end{tikzpicture}
+}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Color scheme and font setup
+\setbeamercolor*{frametitle}{fg=OSTPurple,bg=white}
+\setbeamerfont{frametitle}{series=\bfseries}
+
+\setbeamertemplate{section in toc}{\hspace{1em}{\scriptsize\color{OSTPurple}$\bullet$}~\inserttocsection}
+\setbeamercolor*{section in toc}{fg=black}
+\setbeamercolor*{section in toc shaded}{fg=black}
+
+\setbeamerfont{section in head/foot}{size=\footnotesize}
+\setbeamercolor*{section in head/foot}{fg=black}
+
+\setbeamertemplate{itemize item}[circle]
+\setbeamercolor*{itemize item}{fg=OSTPurple}
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamercolor*{itemize subitem}{fg=black}
+\setbeamertemplate{itemize subsubitem}{-}
+\setbeamercolor*{itemize subsubitem}{fg=black}
+
+\setbeamertemplate{enumerate item}{\arabic{enumi})}
+\setbeamercolor{enumerate item}{fg=black}
+\setbeamertemplate{enumerate subitem}{\roman{enumii})}
+\setbeamercolor{enumerate subitem}{fg=black}
+\setbeamertemplate{enumerate subsubitem}{\alph{enumiii})}
+\setbeamercolor{enumerate subsubitem}{fg=black}
+
+\setbeamercolor{caption name}{fg=OSTPurple}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Creates the title page of the OST.
+\makeatletter\newcommand*{\beamerinternalpaperwidth}{\beamer@paperwidth}\makeatother
+\defbeamertemplate*{title page}{customized}[1][]{
+    \setbeamertemplate{footline}{}
+     
+    \begin{tikzpicture}[remember picture,overlay,shift=(current page.south west)]
+        \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+        \node[anchor=north west, inner sep=0pt] (bgimg) at (current page.north west) {\includegraphics[width=\paperwidth]{\Background}};
+    
+
+        \ifthenelse{\lengthtest{\beamerinternalpaperwidth=16cm}}{%
+            % If paper width=16cm ==> 16/9 format
+            % PPT Page size: 33.88cm
+            % LaTeX Page Size: 16cm
+            % ==> all measurements scaled by 1:2.1175
+
+            % tITLE
+            \node[anchor=north west, draw=none, opacity=0.8, fill=white, minimum height=1.048406cm, inner sep=0.1511cm] at ($(current page.north west)+(7.0035419, -4.4958678)$) {\parbox{7.81582cm}{\color{OSTPurple}\Large\bfseries\Title}};
+            
+            % Subtitle
+            \node[anchor=north west, draw=none, opacity=0.8, fill=OSTPink, minimum height=0.6422668cm, inner sep=0.1511cm] at ($(current page.north west)+(5.5442739, -5.5442739)$) {\parbox{5.331759cm}{\color{white}\Subtitle}};
+
+            % Logo
+            \node[anchor=north west, inner sep=0pt] (ostlogo) at ($(current page.north west)+(13.515939, -7.801653)$) {\includegraphics[width=2.044864cm]{header/OSTLogo.png}};
+
+            % Footer
+            \node[anchor=north west] at ($(current page.north west)+(1.05785, -7.806375)$) {\parbox{59.4569mm}{\footnotesize\Department}};
+            \node[anchor=north west, align=left] at ($(current page.north west)+(8.302243, -7.806375)$) {\parbox{44.1558mm}{\footnotesize\Author}};
+            \node[anchor=north west, align=left] at ($(current page.north west)+(8.302243, -8.467532)$) {\parbox{44.1558mm}{\footnotesize\Date}};
+        }{
+            % otherwise ==> 4/3 format
+            % PPT Page size: 25.4cm
+            % LaTeX Page Size: 12.8cm
+            % ==> all measurements scaled by 1:1.984375
+
+            % Title
+            \node[anchor=north west, draw=none, opacity=0.8, fill=white, minimum height=0.942362cm, inner sep=0.1511cm] at ($(current page.north west)+(3.91055, -4.96882)$) {\parbox{7.942047cm}{\color{OSTPurple}\Large\bfseries\Title}};
+
+            % Subtitle
+            \node[anchor=north west, draw=none, opacity=0.8, fill=OSTPink, minimum height=0.68535cm, inner sep=0.1511cm] at ($(current page.north west)+(2.31811, -5.91118)$) {\parbox{5.99685cm}{\color{white}\Subtitle}};
+
+            % Logo
+            \node[anchor=east, inner sep=0pt] (ostlogo) at ($0.5*(bgimg.south east)+0.5*(current page.south east)-(0.3376, 0)$) {\includegraphics[width=2.182047cm]{header/OSTLogo.png}};
+
+            % Footer
+            \node[anchor=north west] at ($(current page.south west)+(0.84661, 1.27496)$) {\parbox{35.3259mm}{\footnotesize\Department}};
+            \node[anchor=north west, align=left] at ($(current page.south west)+(6.641889, 1.27496)$) {\parbox{35.3259mm}{\footnotesize\Author}};
+            \node[anchor=north west, align=left] at ($(current page.south west)+(6.641889, 0.566441)$) {\parbox{35.3259mm}{\footnotesize\Date}};
+
+        };
+
+        
+    \end{tikzpicture}
+}
