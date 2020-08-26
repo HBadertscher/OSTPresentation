@@ -25,98 +25,98 @@
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{document}
-	
-	\frame[plain]{\titlepage}
-	
-	\begin{frame}{\contentsname}
-		\tableofcontents
-	\end{frame}
-	
-	\section{First section}
-	\begin{frame}{Itemize}
-		\begin{itemize}
-			\item This is an itemize environment
-			\item Nice!
-			\item Even sub-items are possible
-			\begin{itemize}
-				\item Wow
-				\begin{itemize}
-					\item such an
-					\item awesome
-				\end{itemize}
-				\item presentation!
-			\end{itemize}
-			\item The end.
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{Enumerate}
-		\begin{enumerate}
-			\item An item
-			\item and another one
-			\item Subitems:
-			\begin{enumerate}
-				\item This
-				\begin{enumerate}
-					\item test
-				\end{enumerate}
-				\item is
-				\item nice
-			\end{enumerate}
-			\item The end.
-		\end{enumerate}
-	\end{frame}
-	\begin{frame}{Equations}
-		\begin{itemize}
-			\item Here, have an equation:
-			\[
-			\left|\int_{\Omega} Z\, d\mu\,\right| 
-			\leq \int_{\Omega} |\,Z\,|\, d\mu
-			\]
-			\item Or something using \texttt{align}:
-			\begin{align*}
-				S_x &= \frac{\hslash}{2} \begin{pmatrix}
-					0 & 1 \\ 1 & 0 \end{pmatrix} &
-				S_y &= \frac{\hslash}{2} \begin{pmatrix}
-					0 & -i \\ i & 0 \end{pmatrix} &
-				S_z &= \frac{\hslash}{2} \begin{pmatrix}
-					1 & 0 \\ 0 & -1 \end{pmatrix}
-			\end{align*}
-		\end{itemize}
-	\end{frame}
-	
-	\section{Second section}
-	\begin{frame}{Boxes}
-		\begin{PurpleBox}{}
-			Nice framed boxes also exist
-		\end{PurpleBox}
-		\begin{PurpleBox}{With \dots}
-			or without title.
-		\end{PurpleBox}
-		\begin{PinkBox}{}
+
+    \frame[plain]{\titlepage}
+
+    \begin{frame}{\contentsname}
+        \tableofcontents
+    \end{frame}
+
+    \section{First section}
+    \begin{frame}{Itemize}
+        \begin{itemize}
+            \item This is an itemize environment
+            \item Nice!
+            \item Even sub-items are possible
+            \begin{itemize}
+                \item Wow
+                \begin{itemize}
+                    \item such an
+                    \item awesome
+                \end{itemize}
+                \item presentation!
+            \end{itemize}
+            \item The end.
+        \end{itemize}
+    \end{frame}
+    \begin{frame}{Enumerate}
+        \begin{enumerate}
+            \item An item
+            \item and another one
+            \item Subitems:
+            \begin{enumerate}
+                \item This
+                \begin{enumerate}
+                    \item test
+                \end{enumerate}
+                \item is
+                \item nice
+            \end{enumerate}
+            \item The end.
+        \end{enumerate}
+    \end{frame}
+    \begin{frame}{Equations}
+        \begin{itemize}
+            \item Here, have an equation:
+            \[
+            \left|\int_{\Omega} Z\, d\mu\,\right|
+            \leq \int_{\Omega} |\,Z\,|\, d\mu
+            \]
+            \item Or something using \texttt{align}:
+            \begin{align*}
+                S_x &= \frac{\hslash}{2} \begin{pmatrix}
+                    0 & 1 \\ 1 & 0 \end{pmatrix} &
+                S_y &= \frac{\hslash}{2} \begin{pmatrix}
+                    0 & -i \\ i & 0 \end{pmatrix} &
+                S_z &= \frac{\hslash}{2} \begin{pmatrix}
+                    1 & 0 \\ 0 & -1 \end{pmatrix}
+            \end{align*}
+        \end{itemize}
+    \end{frame}
+
+    \section{Second section}
+    \begin{frame}{Boxes}
+        \begin{PurpleBox}{}
+            Nice framed boxes also exist
+        \end{PurpleBox}
+        \begin{PurpleBox}{With \dots}
+            or without title.
+        \end{PurpleBox}
+        \begin{PinkBox}{}
             Also in pink
         \end{PinkBox}
         \begin{PinkBox}{With \dots}
             or without title.
         \end{PinkBox}
-	\end{frame}
-	\begin{frame}{Columns and graphics}
-		\begin{columns}[onlytextwidth]
-			\begin{column}{0.5\textwidth}
-				\begin{itemize}
-					\item Multi-col environments should be made using \texttt{columns}!
-					\item \emph{Never} use \texttt{minipage}'s or \texttt{multicols}.
-				\end{itemize}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\centering
-				\includegraphics[width=0.8\linewidth]{header/OSTLogo.png}
-				\captionof{figure}{A sample image. You don't need any floats here, just
-					use \texttt{captionof}.}
-			\end{column}
-		\end{columns}
-	\end{frame}
+    \end{frame}
+    \begin{frame}{Columns and graphics}
+        \begin{columns}[onlytextwidth]
+            \begin{column}{0.5\textwidth}
+                \begin{itemize}
+                    \item Multi-col environments should be made using \texttt{columns}!
+                    \item \emph{Never} use \texttt{minipage}'s or \texttt{multicols}.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \centering
+                \includegraphics[width=0.8\linewidth]{header/OSTLogo.png}
+                \captionof{figure}{A sample image. You don't need any floats here, just
+                    use \texttt{captionof}.}
+            \end{column}
+        \end{columns}
+    \end{frame}
     \begin{frame}{Colors}
-		\begin{columns}[onlytextwidth]
+        \begin{columns}[onlytextwidth]
             \begin{column}[t]{0.25\textwidth}
                 Primary colors:
                 \begin{itemize}
@@ -160,11 +160,11 @@
         \end{columns}
     \end{frame}
 
-	\section{Last section}
-	\begin{frame}{The End}
-		\centering
-		\LARGE That's all folks!
-	\end{frame}
-	
+    \section{Last section}
+    \begin{frame}{The End}
+        \centering
+        \LARGE That's all folks!
+    \end{frame}
+
 \end{document}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %

@@ -72,7 +72,7 @@
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Outer theme
-\setbeamersize{text margin left=1.053cm,text margin right=0.4439cm} 
+\setbeamersize{text margin left=1.053cm,text margin right=0.4439cm}
 \setbeamertemplate{navigation symbols}{}  % remove navigation symbols
 
 \setbeamertemplate{headline}{
@@ -150,11 +150,11 @@
 \makeatletter\newcommand*{\beamerinternalpaperwidth}{\beamer@paperwidth}\makeatother
 \defbeamertemplate*{title page}{customized}[1][]{
     \setbeamertemplate{footline}{}
-     
+
     \begin{tikzpicture}[remember picture,overlay,shift=(current page.south west)]
         \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
         \node[anchor=north west, inner sep=0pt] (bgimg) at (current page.north west) {\includegraphics[width=\paperwidth]{\Background}};
-    
+
 
         \ifthenelse{\lengthtest{\beamerinternalpaperwidth=16cm}}{%
             % If paper width=16cm ==> 16/9 format
@@ -162,9 +162,9 @@
             % LaTeX Page Size: 16cm
             % ==> all measurements scaled by 1:2.1175
 
-            % tITLE
+            % Title
             \node[anchor=north west, draw=none, opacity=0.8, fill=white, minimum height=1.048406cm, inner sep=0.1511cm] at ($(current page.north west)+(7.0035419, -4.4958678)$) {\parbox{7.81582cm}{\color{OSTBlackberry}\Large\bfseries\Title}};
-            
+
             % Subtitle
             \node[anchor=north west, draw=none, opacity=0.8, fill=OSTRaspberry, minimum height=0.6422668cm, inner sep=0.1511cm] at ($(current page.north west)+(5.5442739, -5.5442739)$) {\parbox{5.331759cm}{\color{white}\Subtitle}};
 
@@ -197,6 +197,6 @@
 
         };
 
-        
+
     \end{tikzpicture}
 }
