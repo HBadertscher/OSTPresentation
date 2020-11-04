@@ -74,8 +74,10 @@
 % Outer theme
 \setbeamersize{text margin left=1.053cm,text margin right=0.4439cm}
 \setbeamertemplate{navigation symbols}{}  % remove navigation symbols
+\setbeamerfont{section in head/foot}{size=\scriptsize}
+\setbeamerfont{text in head/foot}{size=\scriptsize}
 
-\setbeamertemplate{headline}{
+\defbeamertemplate{headline}{ostheadline}{
     \leavevmode%
     \hbox{%
         \begin{beamercolorbox}[wd=0.5\paperwidth,ht=4.65ex,dp=1.5ex,left]{section in head/foot}%
@@ -94,6 +96,7 @@
     }%
     \vskip0pt%
 }
+\setbeamertemplate{headline}[ostheadline]
 \setbeamertemplate{footline}{
     \leavevmode%
     \hbox{%
@@ -122,9 +125,42 @@
 \setbeamercolor*{frametitle}{fg=OSTBlackberry,bg=white}
 \setbeamerfont{frametitle}{series=\bfseries}
 
-\setbeamertemplate{section in toc}{\hspace{1em}{\scriptsize\color{OSTBlackberry}$\bullet$}~\inserttocsection}
-\setbeamercolor*{section in toc}{fg=black}
-\setbeamercolor*{section in toc shaded}{fg=black}
+% Fancy OST Arrow for ToC by Patrik Mueller
+\defbeamertemplate{section in toc}{ost arrow}{
+    \leavevmode\leftskip=5ex%
+    \llap{\scalebox{0.7}{
+            \begin{tikzpicture}[every path/.style={color=OSTBlack,line width=2.3pt}]
+                \coordinate (O) at (0pt, 6pt);
+                \coordinate (T) at (12pt, 6pt);
+                \draw (T) -- ++(-4pt, 0pt);
+                \draw[color=OSTBlackberry] (O) ++(4pt, 0pt) -- ++(4pt, 0pt);
+                \draw[color=OSTRaspberry] (O) -- ++(4pt, 0pt);
+                \draw (T)++(.7pt, .7pt) -- ++(-5.7pt, -5.7pt);
+                \draw (T)++(.7pt, -.7pt) -- ++(-5.7pt, 5.7pt);
+		\end{tikzpicture}}}%
+	\hspace{1.ex}\textbf{\color{OSTBlack}\inserttocsection}\par%
+}
+\defbeamertemplate{section in toc}{ost normal}{
+	\leavevmode\leftskip=5ex%
+	\llap{\raisebox{0.2ex}{\textcolor{OSTBlackberry}{$\bullet$}}\kern1ex}%
+	\hspace{1.ex}\color{OSTBlack}\inserttocsection\par%
+}
+\setbeamertemplate{section in toc}[ost normal]
+\setbeamertemplate{section in toc shaded}{%
+	\leavevmode\leftskip=5ex%
+	\llap{\raisebox{0.2ex}{\textcolor{OSTBlackberry}{$\bullet$}}\kern1ex}%
+	\hspace{1.ex}\color{black}\inserttocsection\par%
+}
+\setbeamertemplate{subsection in toc}{%
+	\leavevmode\leftskip=8ex%
+	\llap{\raisebox{0.2ex}{\textcolor{OSTBlack}{\small$\bullet$}}\kern1ex}%
+	\hspace{1.ex}\inserttocsubsection\par%
+}
+\setbeamertemplate{subsection in toc shaded}{%
+	\leavevmode\leftskip=8ex%
+	\llap{\raisebox{0.2ex}{\textcolor{OSTBlack}{\small$\bullet$}}\kern1ex}%
+	\hspace{1.ex}\inserttocsubsection\par%
+}
 
 \setbeamerfont{section in head/foot}{size=\footnotesize}
 \setbeamercolor*{section in head/foot}{fg=black}
@@ -200,3 +236,20 @@
 
     \end{tikzpicture}
 }
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% TOC at beginning of every section
+\newcommand*{\True}{true}
+\ifx \TocAtSection \True
+    \AtBeginSection[]
+    {
+        \setbeamertemplate{headline}{}
+        \setbeamertemplate{section in toc}[ost arrow]
+        \begin{frame}<beamer>
+            \frametitle{\contentsname}
+            \tableofcontents[currentsection]
+        \end{frame}
+        \setbeamertemplate{headline}[ostheadline]
+        \setbeamertemplate{section in toc}[ost normal]
+    }
+\fi
