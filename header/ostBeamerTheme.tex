@@ -253,3 +253,21 @@
         \setbeamertemplate{section in toc}[ost normal]
     }
 \fi
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Focus slide
+% Inspired by and adapted from the metropolis plain slide
+% https://github.com/matze/mtheme
+\newcommand\focusslide[2][OSTBlackberry]{%
+    \makeatletter%
+    \begingroup%
+    \setbeamercolor{background canvas}{bg=#1}%
+    \begin{frame}[plain]%
+        \begin{center}%
+            \usebeamerfont{frametitle}%
+            \textcolor{white}{#2}%
+        \end{center}%
+    \end{frame}%
+    \endgroup%
+    \makeatother%
+}
